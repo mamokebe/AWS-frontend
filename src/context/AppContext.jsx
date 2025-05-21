@@ -9,13 +9,13 @@ import axios from 'axios';
 
 axios.defaults.withCredentials=true;
 // Set the base URL for axios requests
-// axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL;
-axios.defaults.baseURL ="http://18.233.152.163:5000"
+axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL;
+// axios.defaults.baseURL =http://18.233.152.163:5000
 
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
-  const currency = "$";
+  const currency = import.meta.env.VITE_CURRENCY;
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
